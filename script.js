@@ -3,7 +3,7 @@ async function searchPlayer() {
   const resultDiv = document.getElementById("result");
 
   try {
-    const response = await fetch("data.json");
+    const response = await fetch("./simulation/data.json");
     const data = await response.json();
 
     const player = data.find(p =>
@@ -20,7 +20,7 @@ async function searchPlayer() {
         <p><strong>Profil Steam:</strong> <a href="${player["Profil Steam"]}" target="_blank">${player["Profil Steam"]}</a></p>
         <p><strong>Owner SteamID64:</strong> ${player["Owner SteamID64"]}</p>
         <p><strong>Identifiant SRP:</strong> ${player["Identifiant SRP"]}</p>
-        <p><strong>Identifiant Discord:</strong> ${player["Identifiant discord"]}</p>
+        <p><strong>Discord:</strong> ${player["Identifiant discord"]}</p>
         <p><strong>Argent:</strong> ${player["Argent"]}</p>
         <p><strong>Nombre d'heures de jeux:</strong> ${player["Nombre d'heures de jeux"]}</p>
         <p><strong>Date de création du compte:</strong> ${player["Date de création du compte"]}</p>
