@@ -3,10 +3,11 @@ async function searchPlayer() {
   const resultDiv = document.getElementById("result");
 
   try {
-    const response = await fetch("https://simple_Roleplay_API.com/players");
+    const response = await fetch("https://api.simple-roleplay.fr/public/user.php");
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const data = await response.json();
+    console.log("Données récupérées:", data);
 
     const player = data.find(p =>
       p["Nom du joueur"]?.toLowerCase().includes(input) ||
