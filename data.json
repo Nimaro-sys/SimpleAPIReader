@@ -8,8 +8,11 @@
     "Identifiant discord": "N/A",
     "Argent": "13 690 €",
     "Nombre d'heures de jeux": "93 heures",
-    "Date de création du compte": "2021-11-05 01:17:57",
-    "Dernière connexion": "2024-11-10 21:02:40"
+    "Date de création du compte": "2021-11-05 13:17:57",
+    "Dernière connexion": "2024-11-10 21:02:40",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
   },
   {
     "Nom du joueur": "Léandro Moustic",
@@ -20,8 +23,11 @@
     "Identifiant discord": "leandro#4152",
     "Argent": "52 340 €",
     "Nombre d'heures de jeux": "231 heures",
-    "Date de création du compte": "2020-06-12 14:33:20",
-    "Dernière connexion": "2025-05-30 09:24:51"
+    "Date de création du compte": "2020-06-12 16:33:20",
+    "Dernière connexion": "2025-05-30 19:24:51",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
   },
   {
     "Nom du joueur": "Jade Choupinette",
@@ -32,8 +38,11 @@
     "Identifiant discord": "jade.love#2022",
     "Argent": "120 000 €",
     "Nombre d'heures de jeux": "502 heures",
-    "Date de création du compte": "2019-11-08 22:45:10",
-    "Dernière connexion": "2025-06-20 18:12:07"
+    "Date de création du compte": "2019-11-08 18:45:10",
+    "Dernière connexion": "2025-06-20 18:12:07",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
   },
   {
     "Nom du joueur": "Théo Lardon",
@@ -44,8 +53,11 @@
     "Identifiant discord": "t.lardon#8421",
     "Argent": "3 120 €",
     "Nombre d'heures de jeux": "45 heures",
-    "Date de création du compte": "2022-04-01 08:15:00",
-    "Dernière connexion": "2025-01-03 11:32:40"
+    "Date de création du compte": "2022-04-01 12:15:00",
+    "Dernière connexion": "2025-01-03 14:32:40",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
   },
   {
     "Nom du joueur": "Cassandra Touch",
@@ -56,8 +68,11 @@
     "Identifiant discord": "cassy#3100",
     "Argent": "0 €",
     "Nombre d'heures de jeux": "7 heures",
-    "Date de création du compte": "2023-09-15 12:50:35",
-    "Dernière connexion": "2025-06-01 15:10:10"
+    "Date de création du compte": "2023-09-15 17:50:35",
+    "Dernière connexion": "2025-06-01 20:10:10",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
   },
   {
     "Nom du joueur": "Enzo Delamoule",
@@ -68,7 +83,130 @@
     "Identifiant discord": "enzo#0077",
     "Argent": "88 888 €",
     "Nombre d'heures de jeux": "420 heures",
-    "Date de création du compte": "2021-01-21 19:05:22",
-    "Dernière connexion": "2025-06-15 23:59:59"
+    "Date de création du compte": "2021-01-21 21:05:22",
+    "Dernière connexion": "2025-06-15 22:59:59",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
+  },
+  {
+    "Nom du joueur": "Angel Rossi",
+    "SteamID64": "76561191732483174",
+    "Profil Steam": "https://steamcommunity.com/profiles/76561191732483174",
+    "Owner SteamID64": "76561191732483174",
+    "Identifiant SRP": "77867",
+    "Identifiant discord": "luo#1234",
+    "Argent": "42 850 €",
+    "Nombre d'heures de jeux": "2309 heures",
+    "Date de création du compte": "2021-10-08 10:45:00",
+    "Dernière connexion": "2025-03-12 20:10:55",
+    "Commandant": false,
+    "Modérateur": true,
+    "Administrateur": false
+  },
+  {
+    "Nom du joueur": "Camille Cousin",
+    "SteamID64": "76561192985437253",
+    "Profil Steam": "https://steamcommunity.com/profiles/76561192985437253",
+    "Owner SteamID64": "76561192985437253",
+    "Identifiant SRP": "74425",
+    "Identifiant discord": "grosporc#1234",
+    "Argent": "38 392 €",
+    "Nombre d'heures de jeux": "292 heures",
+    "Date de création du compte": "2022-12-23 08:20:30",
+    "Dernière connexion": "2024-09-21 19:50:13",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
+  },
+  {
+    "Nom du joueur": "Gabriel Bonnaparte",
+    "SteamID64": "76561199823500949",
+    "Profil Steam": "https://steamcommunity.com/profiles/76561199823500949",
+    "Owner SteamID64": "76561199823500949",
+    "Identifiant SRP": "75445",
+    "Identifiant discord": "Jutica#1234",
+    "Argent": "84 469 €",
+    "Nombre d'heures de jeux": "1408 heures",
+    "Date de création du compte": "2022-06-23 11:09:00",
+    "Dernière connexion": "2025-05-10 23:39:11",
+    "Commandant": true,
+    "Modérateur": false,
+    "Administrateur": false
+  },
+  {
+    "Nom du joueur": "Maxime Schmitt",
+    "SteamID64": "76561196344267955",
+    "Profil Steam": "https://steamcommunity.com/profiles/76561196344267955",
+    "Owner SteamID64": "76561196344267955",
+    "Identifiant SRP": "77443",
+    "Identifiant discord": "maxime5604",
+    "Argent": "71 660 €",
+    "Nombre d'heures de jeux": "159 heures",
+    "Date de création du compte": "2020-04-11 15:00:00",
+    "Dernière connexion": "2024-07-25 22:45:10",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
+  },
+  {
+    "Nom du joueur": "Emma Barbier",
+    "SteamID64": "76561192844760676",
+    "Profil Steam": "https://steamcommunity.com/profiles/76561192844760676",
+    "Owner SteamID64": "76561192844760676",
+    "Identifiant SRP": "72006",
+    "Identifiant discord": "sombrevent#5678",
+    "Argent": "10 335 €",
+    "Nombre d'heures de jeux": "114 heures",
+    "Date de création du compte": "2021-05-01 18:45:00",
+    "Dernière connexion": "2025-01-02 15:33:10",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
+  },
+  {
+    "Nom du joueur": "Tom Chastain",
+    "SteamID64": "76561198827453429",
+    "Profil Steam": "https://steamcommunity.com/profiles/76561198827453429",
+    "Owner SteamID64": "76561198827453429",
+    "Identifiant SRP": "77512",
+    "Identifiant discord": "Tomlavachette#1234",
+    "Argent": "19 169 390 €",
+    "Nombre d'heures de jeux": "11226 heures",
+    "Date de création du compte": "2020-05-06 09:45:30",
+    "Dernière connexion": "2025-06-20 06:32:55",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": true
+  },
+  {
+    "Nom du joueur": "Jade Blanc",
+    "SteamID64": "76561194657442395",
+    "Profil Steam": "https://steamcommunity.com/profiles/76561194657442395",
+    "Owner SteamID64": "76561194657442395",
+    "Identifiant SRP": "75733",
+    "Identifiant discord": "Tznz#1234",
+    "Argent": "33 500 €",
+    "Nombre d'heures de jeux": "401 heures",
+    "Date de création du compte": "2021-08-21 16:20:00",
+    "Dernière connexion": "2025-04-18 21:40:00",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
+  },
+  {
+    "Nom du joueur": "Hugo Gros",
+    "SteamID64": "76561193238466524",
+    "Profil Steam": "https://steamcommunity.com/profiles/76561193238466524",
+    "Owner SteamID64": "76561193238466524",
+    "Identifiant SRP": "71781",
+    "Identifiant discord": "aracheurdevoiles#4567",
+    "Argent": "118 208 €",
+    "Nombre d'heures de jeux": "578 heures",
+    "Date de création du compte": "2023-05-27 11:35:00",
+    "Dernière connexion": "2024-12-09 18:25:00",
+    "Commandant": false,
+    "Modérateur": false,
+    "Administrateur": false
   }
 ]

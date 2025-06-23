@@ -3,7 +3,9 @@ async function searchPlayer() {
   const resultDiv = document.getElementById("result");
 
   try {
-    const response = await fetch("data.json");
+    const response = await fetch("https://simple_Roleplay_API.com/players");
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
     const data = await response.json();
 
     const player = data.find(p =>
@@ -32,9 +34,8 @@ async function searchPlayer() {
     } else {
       resultDiv.innerHTML = "<p>Aucun joueur trouvé 😓</p>";
     }
-
   } catch (error) {
-    console.error("Erreur lors du chargement JSON:", error);
+    console.error("Erreur lors de la requête API:", error);
     resultDiv.innerHTML = "<p>Erreur de chargement des données.</p>";
   }
 }
