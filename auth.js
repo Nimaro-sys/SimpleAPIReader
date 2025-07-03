@@ -1,7 +1,3 @@
-// Utilisateur/MDP autorisés en clair
-const VALID_USERNAME = "Tom";
-const VALID_PASSWORD = "Lavachette";
-
 // Fonction login
 document.addEventListener("DOMContentLoaded", () => {
   const loginBtn = document.getElementById("loginBtn");
@@ -11,12 +7,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value;
       const errorBox = document.getElementById("error");
 
-      if (username === VALID_USERNAME && password === VALID_PASSWORD) {
-        localStorage.setItem("auth_ok", "true");
-        window.location.href = "index.html";
-      } else {
-        errorBox.textContent = "Mauvais identifiants.";
-      }
+      fetch("http://localhost/APIlogin/checklogin.php?login="+username+"&password="+password)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Erreur de chargement des utilisateurs.");
+          }
+          return response.json();
+        })
+        .then(response => {
+          if (response == "true") {
+            window.location.href = "index.html";
+          } else {
+            errorBox.textContent = "Mauvais identifiants.";
+          }
+        })
+        .catch(error => {
+          console.error("Erreur:", error);
+          errorBox.textContent = "Erreur lors de la connexion.";
+        });
     });
   }
 });
