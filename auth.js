@@ -1,7 +1,7 @@
 // Utilisateur/MDP autorisés
 const VALID_USERNAME = "Tom";
-const VALID_PASSWORD = "802fbf9a6c7e74812c37c420e1dc399dd3b7d170f305f14dd8a15a6b3f7721f6"; 
-// Hash SHA-256 du mot de passe;
+// SHA-256 de "Lavachette"
+const VALID_PASSWORD_HASH = "802fbf9a6c7e74812c37c420e1dc399dd3b7d170f305f14dd8a15a6b3f7721f6";
 
 // Fonction de hash SHA-256
 async function hashText(text) {
@@ -22,9 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const errorBox = document.getElementById("error");
 
       const passwordHash = await hashText(password);
-      const validPasswordHash = await hashText(VALID_PASSWORD);
 
-      if (username === VALID_USERNAME && passwordHash === validPasswordHash) {
+      if (username === VALID_USERNAME && passwordHash === VALID_PASSWORD_HASH) {
         localStorage.setItem("auth_ok", "true");
         window.location.href = "index.html";
       } else {
