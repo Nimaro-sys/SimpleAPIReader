@@ -1,42 +1,67 @@
-async function searchPlayer() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  const resultDiv = document.getElementById("result");
+const CACHE_DURATION_MS = 10 * 60 * 1000; // 10 minutes
+
+function getFromCache(key) {
+  const raw = localStorage.getItem(key);
+  if (!raw) return null;
+
+  const data = JSON.parse(raw);
+  if (Date.now() - data.timestamp > CACHE_DURATION_MS) {
+    localStorage.removeItem(key);
+    return null;
+  }
+  return data.value;
+}
+
+function saveToCache(key, value) {
+  localStorage.setItem(key, JSON.stringify({
+    value,
+    timestamp: Date.now()
+  }));
+}
+
+async function fetchPlayer() {
+  const id = document.getElementById('playerId').value.trim();
+  const output = document.getElementById('output');
+  const error = document.getElementById('error');
+  output.innerHTML = '';
+  error.textContent = '';
+
+  if (!id) {
+    error.textContent = "⛔ Merci d'entrer un identifiant.";
+    return;
+  }
+
+  const cacheKey = `player_${id}`;
+  const cached = getFromCache(cacheKey);
+  if (cached) {
+    displayPlayerData(cached);
+    return;
+  }
 
   try {
-    const response = await fetch("https://api.simple-roleplay.fr/public/user.php");
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-    const data = await response.json();
-    console.log("Données récupérées:", data);
-
-    const player = data.find(p =>
-      p["Nom du joueur"]?.toLowerCase().includes(input) ||
-      p["Identifiant discord"]?.toLowerCase().includes(input) ||
-      p["SteamID64"]?.includes(input) ||
-      p["Identifiant SRP"]?.toLowerCase().includes(input)
-    );
-
-    if (player) {
-      resultDiv.innerHTML = `
-        <h2>${player["Nom du joueur"]}</h2>
-        <p><strong>SteamID64:</strong> ${player["SteamID64"]}</p>
-        <p><strong>Profil Steam:</strong> <a href="${player["Profil Steam"]}" target="_blank">${player["Profil Steam"]}</a></p>
-        <p><strong>Owner SteamID64:</strong> ${player["Owner SteamID64"]}</p>
-        <p><strong>Identifiant SRP:</strong> ${player["Identifiant SRP"]}</p>
-        <p><strong>Identifiant Discord:</strong> ${player["Identifiant discord"]}</p>
-        <p><strong>Argent:</strong> ${player["Argent"]}</p>
-        <p><strong>Nombre d'heures de jeux:</strong> ${player["Nombre d'heures de jeux"]}</p>
-        <p><strong>Date de création du compte:</strong> ${player["Date de création du compte"]}</p>
-        <p><strong>Dernière connexion:</strong> ${player["Dernière connexion"]}</p>
-        <p><strong>Commandant:</strong> ${player.Commandant ? "✅ Oui" : "❌ Non"}</p>
-        <p><strong>Modérateur:</strong> ${player.Modérateur ? "✅ Oui" : "❌ Non"}</p>
-        <p><strong>Admin:</strong> ${player.Administrateur ? "✅ Oui" : "❌ Non"}</p>
-      `;
-    } else {
-      resultDiv.innerHTML = "<p>Aucun joueur trouvé 😓</p>";
+    const res = await fetch(`https://api.simple-roleplay.fr/public/user.php?id=${encodeURIComponent(id)}`);
+    if (!res.ok) {
+      error.textContent = res.status === 404 ? "🚫 Joueur non trouvé." : "⚠️ Erreur de requête.";
+      return;
     }
-  } catch (error) {
-    console.error("Erreur lors de la requête API:", error);
-    resultDiv.innerHTML = "<p>Erreur de chargement des données.</p>";
+    const data = await res.json();
+    saveToCache(cacheKey, data);
+    displayPlayerData(data);
+  } catch (e) {
+    console.error(e);
+    error.textContent = "💥 Erreur inattendue.";
   }
+}
+
+function displayPlayerData(data) {
+  const output = document.getElementById('output');
+  output.innerHTML = `
+    <p><strong>Nom RP :</strong> ${data.name}</p>
+    <p><strong>SteamID64 :</strong> ${data.steamid64}</p>
+    <p><strong>Discord ID :</strong> ${data.discordId || 'Non renseigné'}</p>
+    <p><strong>Admin :</strong> ${data.isAdmin ? '✅ Oui' : '❌ Non'}</p>
+    <p><strong>Super Admin :</strong> ${data.isSuperAdmin ? '✅ Oui' : '❌ Non'}</p>
+    <p><strong>Chef de Police :</strong> ${data.isPoliceChief ? '✅ Oui' : '❌ Non'}</p>
+    <p style="font-size: 0.9rem; opacity: 0.6;">Données récupérées à ${new Date().toLocaleTimeString()}</p>
+  `;
 }

@@ -2,16 +2,20 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Recherche Joueur</title>
+  <title>Recherche joueur - Simple RP (optimisé)</title>
   <link rel="stylesheet" href="style.css">
+  <script src="auth.js"></script>
+  <script>checkAuthOrRedirect();</script>
 </head>
 <body>
-  <div class="container">
-    <h1>🔍 Recherche Joueur</h1>
-    <input type="text" id="searchInput" placeholder="Entre un nom de joueur...">
-    <button onclick="searchPlayer()">Rechercher</button>
 
-    <div id="result"></div>
+  <h1>📦 Recherche joueur Simple RP (cache local)</h1>
+  <div class="container">
+    <input type="text" id="playerId" placeholder="Nom RP, SteamID64 ou Discord ID">
+    <button onclick="fetchPlayer()">Rechercher</button>
+
+    <div id="output" class="result"></div>
+    <div id="error" class="error"></div>
   </div>
 
   <script src="script.js"></script>
